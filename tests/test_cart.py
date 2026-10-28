@@ -127,3 +127,6 @@ def test_most_expensive_does_not_use_total_quantity(cart: Cart) -> None:
     result = cart.most_expensive()
     assert result is not None
     assert result.name == "expensive"
+
+def test_ci_failure_demo() -> None:
+    assert 1 == 2
