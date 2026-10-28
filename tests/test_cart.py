@@ -40,9 +40,7 @@ def test_same_name_keeps_original_price(cart: Cart) -> None:
         (10.0, 0 + 1, 10.0),
     ],
 )
-def test_total_values(
-    cart: Cart, price: float, qty: int, expected: float
-) -> None:
+def test_total_values(cart: Cart, price: float, qty: int, expected: float) -> None:
     cart.add("item", price, qty)
     assert cart.total() == pytest.approx(expected)
 
@@ -56,9 +54,7 @@ def test_total_values(
         (100, 0.0),
     ],
 )
-def test_discounts(
-    cart: Cart, discount: float, expected: float
-) -> None:
+def test_discounts(cart: Cart, discount: float, expected: float) -> None:
     cart.add("book", 200.0, 2)
     assert cart.total(discount) == pytest.approx(expected)
 
